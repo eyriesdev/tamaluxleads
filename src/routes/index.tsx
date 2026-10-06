@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
-import { FileKey, FileBadge, MapPinned, FileSignature, Stamp, Landmark } from 'lucide-react';
+import { FileKey, FileBadge, MapPinned, FileSignature, Stamp, Landmark, UserCheck, FileCheck, MapPin, Building2, ReceiptText, Scale } from 'lucide-react';
 import heroImage from '@/assets/property-residence.jpg.asset.json';
 import logo from '@/assets/tamalux-logo.png.asset.json';
 import landImage from '@/assets/property-land.jpg.asset.json';
@@ -43,6 +43,15 @@ const compliances = [
   { name: 'FCTA Approvals', short: 'Planning', icon: Landmark, copy: 'Applicable planning and development approvals for the property and its intended use.' },
 ];
 
+const questions = [
+  { question: 'Who owns the property?', stake: 'A name on a form is not proof of ownership.', icon: UserCheck },
+  { question: 'What documentation supports the transaction?', stake: 'Documents are the difference between a home and a dispute.', icon: FileCheck },
+  { question: 'Where exactly is the property located?', stake: 'A description is not a location. Know the ground you are buying.', icon: MapPin },
+  { question: 'What development is taking place around the area?', stake: 'What rises around a property shapes what it can become.', icon: Building2 },
+  { question: 'What am I actually paying for?', stake: 'Every naira should be accounted for — the land, the title and what comes with both.', icon: ReceiptText },
+  { question: 'What are the terms of the transaction?', stake: 'Clear terms today prevent costly surprises tomorrow.', icon: Scale },
+];
+
 const nextSteps = [
   { title: 'Start with your goal', copy: 'Tell us whether you want to buy, build, invest or sell. Share your preferred Abuja location, budget and timeline.' },
   { title: 'Discuss the right questions', copy: 'Talk through suitable options, the property’s location, available documentation and transaction terms with a Tamalux consultant.' },
@@ -82,14 +91,7 @@ function Index() {
 
     <section id="services" className="section services-section"><div className="sales-copy">
       <h2><span className="copy-emphasis">Before you send money,</span> ask what matters.</h2>
-      <ol className="sales-list">
-        <li>Who owns the property?</li>
-        <li>What documentation supports the transaction?</li>
-        <li>Where exactly is the property located?</li>
-        <li>What development is taking place around the area?</li>
-        <li>What am I actually paying for?</li>
-        <li>What are the terms of the transaction?</li>
-      </ol>
+      <ol className="sales-list">{questions.map((item) => <li key={item.question}><span className="question-icon"><item.icon aria-hidden="true" strokeWidth={1.5} /></span><span className="question-copy"><strong className="question-text">{item.question}</strong><em className="question-stake">{item.stake}</em></span></li>)}</ol>
       <p>You don’t need to know everything about Abuja real estate. You do need to <strong className="copy-emphasis">know what you’re paying for.</strong></p>
       <Cta />
     </div></section>
