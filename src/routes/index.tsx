@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
+import { FileKey, FileBadge, MapPinned, FileSignature, Stamp, Landmark } from 'lucide-react';
 import heroImage from '@/assets/property-residence.jpg.asset.json';
 import logo from '@/assets/tamalux-logo.png.asset.json';
 import landImage from '@/assets/property-land.jpg.asset.json';
@@ -34,12 +35,12 @@ const goals = [
 ];
 
 const compliances = [
-  { name: 'Right of Occupancy', short: 'R of O', copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
-  { name: 'Certificate of Occupancy', short: 'C of O', copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
-  { name: 'Registered Survey Plan', short: 'Survey', copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
-  { name: 'Deed of Assignment / Sublease', short: 'Transfer', copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
-  { name: 'Ministerial Consent', short: 'Consent', copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
-  { name: 'FCTA Approvals', short: 'Planning', copy: 'Applicable planning and development approvals for the property and its intended use.' },
+  { name: 'Right of Occupancy', short: 'R of O', icon: FileKey, copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
+  { name: 'Certificate of Occupancy', short: 'C of O', icon: FileBadge, copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
+  { name: 'Registered Survey Plan', short: 'Survey', icon: MapPinned, copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
+  { name: 'Deed of Assignment / Sublease', short: 'Transfer', icon: FileSignature, copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
+  { name: 'Ministerial Consent', short: 'Consent', icon: Stamp, copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
+  { name: 'FCTA Approvals', short: 'Planning', icon: Landmark, copy: 'Applicable planning and development approvals for the property and its intended use.' },
 ];
 
 function Index() {
@@ -86,7 +87,7 @@ function Index() {
 
     <section className="section compliance-section" aria-labelledby="compliance-title"><div className="section-inner">
       <div className="compliance-heading"><h2 id="compliance-title">Your property should come with <span className="copy-emphasis">more than a promise.</span></h2><p>All our properties meet applicable <strong>land title, ownership documentation and FCTA approval requirements.</strong> Here’s what matters for your purchase.</p></div>
-      <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><span className="compliance-short">{item.short}</span><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
+      <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><div className="compliance-visual"><item.icon className="compliance-icon" aria-hidden="true" strokeWidth={1.5} /><span className="compliance-short">{item.short}</span></div><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
       <div className="compliance-close"><p><strong className="copy-emphasis">Know the title. See the documents.</strong><br />Ask your consultant which documents and approvals apply to your chosen property and transaction.</p><Cta /></div>
     </div></section>
 
