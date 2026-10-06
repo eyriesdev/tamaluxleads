@@ -1,58 +1,78 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
-import { ArrowDown, ArrowUpRight, BadgeCheck, Building2, Check, ClipboardCheck, FileCheck2, FileText, Handshake, House, LandPlot, MapPin, MessageCircle, Phone, Search, ShieldCheck, Sprout, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
-import { ConsultationForm } from '@/components/consultation-form';
 import heroImage from '@/assets/abuja-residence.jpg';
 import logo from '@/assets/tamalux-logo.png.asset.json';
 
+const WHATSAPP_URL = `https://wa.me/2348157035260?text=${encodeURIComponent('Hello Tamalux Consultant, I saw your YouTube Ads, I am interested in genuine Abuja Property. My name is ......')}`;
+
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
-    { title: 'Abuja Property Guidance & Consultation | Tamalux Homes & Properties' },
-    { name: 'description', content: 'Before buying property in Abuja, understand what you are buying. Discuss land, homes, investment and property sales with a Tamalux consultant. No pressure. No obligation.' },
-    { property: 'og:title', content: 'Know What You’re Buying | Tamalux Homes & Properties' },
-    { property: 'og:description', content: 'Make your next Abuja property decision with better information. Speak with a Tamalux property consultant.' },
+    { title: 'Genuine Abuja Property | Tamalux Homes & Properties' },
+    { name: 'description', content: 'Before you buy property in Abuja, know what you are buying. Chat with a Tamalux consultant on WhatsApp.' },
+    { property: 'og:title', content: 'Before You Buy Property in Abuja, Know What You’re Buying' },
+    { property: 'og:description', content: 'Speak with a Tamalux property consultant on WhatsApp. No pressure. No obligation.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
   ] }),
   component: Index,
 });
-const services = [
-  { icon: Search, title: 'Property guidance', text: 'Understand your options before you make a commitment.' },
-  { icon: FileCheck2, title: 'Title & documentation review', text: 'Navigate the documentation and verification process associated with property transactions.' },
-  { icon: MapPin, title: 'Location & market insight', text: 'Assess locations based on development, accessibility and relevant market factors.' },
-  { icon: Building2, title: 'Estate development', text: 'Structured residential and commercial opportunities with infrastructure and planning in mind.' },
-  { icon: Sprout, title: 'Land banking opportunities', text: 'Explore strategic land opportunities with a longer-term perspective.' },
-  { icon: Handshake, title: 'Property sales & consultancy', text: 'Connect with opportunities that align with your property objectives.' },
-];
-const goals = [
-  { icon: LandPlot, title: 'I want to buy land', goal: 'Buy land', text: 'Find an opportunity that fits your location preference, budget and long-term objective.', action: 'Explore land opportunities' },
-  { icon: House, title: 'I want to build a home', goal: 'Build a home', text: 'Explore residential opportunities suitable for creating your home in Abuja.', action: 'Talk to a consultant' },
-  { icon: TrendingUp, title: 'I want to invest', goal: 'Invest', text: 'Discuss land banking and property opportunities based on your objectives and risk considerations.', action: 'Discuss my options' },
-  { icon: Handshake, title: 'I want to sell property', goal: 'Sell property', text: 'Get professional guidance on positioning and marketing your property to potential buyers.', action: 'Talk to Tamalux' },
-];
-function Brand() { return <a className="brand" href="#top" aria-label="Tamalux home"><span className="logo-box"><img src={logo.url} alt="Tamalux Homes & Properties logo" width={58} height={58} /></span><span className="brand-name">TAMALUX<span className="brand-sub">HOMES & PROPERTIES LTD</span></span></a>; }
-function Eyebrow({ children }: { children: React.ReactNode }) { return <div className="eyebrow"><span className="eyebrow-line" />{children}</div>; }
+
+function Cta({ label = 'Chat with a Tamalux consultant on WhatsApp' }: { label?: string }) {
+  return <Button variant="whatsapp" asChild className="large-cta"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{label}</a></Button>;
+}
+
 function Index() {
-  const [enquiry, setEnquiry] = useState<{ goal: string; method: 'Phone' | 'WhatsApp' }>();
-  const consult = (goal = 'Property guidance', method: 'Phone' | 'WhatsApp' = 'Phone') => setEnquiry({ goal, method });
-  return <main id="top">
-    <header className="site-header"><Brand /><nav className="header-nav" aria-label="Main navigation"><a href="#approach">Our approach</a><a href="#services">What we do</a><a href="#property-goals">Your property goals</a></nav><Button variant="consultation" className="header-cta" onClick={() => consult()}>Let’s talk property <ArrowUpRight /></Button></header>
+  return <main id="top" className="sales-page">
+    <header className="site-header sales-header"><span className="brand"><span className="logo-box"><img src={logo.url} alt="Tamalux Homes & Properties logo" width={58} height={58} /></span><span className="brand-name">TAMALUX<span className="brand-sub">HOMES & PROPERTIES LTD</span></span></span></header>
+
     <section className="hero" aria-labelledby="hero-title">
-      <img className="hero-photo" src={heroImage} alt="Illustrative contemporary home in an Abuja-inspired residential setting" width={1920} height={1088} fetchPriority="high" /><div className="hero-shade" />
-      <div className="hero-location"><MapPin size={13} /> ABUJA, NIGERIA</div>
-      <div className="hero-inner"><Eyebrow>Better information. Better decisions.</Eyebrow><h1 id="hero-title">Before you buy property<br className="hidden sm:block" /> in Abuja, <em>know what<br className="hidden sm:block" /> you’re buying.</em></h1><p className="hero-lead">A good-looking estate isn’t enough.</p><p className="hero-copy">Before you commit your hard-earned money, understand the documentation, location, development potential and the opportunity itself.</p><div className="hero-actions"><Button variant="consultation" className="large-cta" onClick={() => consult()}>Speak with a Tamalux consultant <ArrowUpRight /></Button><Button variant="heroOutline" asChild className="large-cta"><a href="#approach">Make an informed decision <ArrowDown /></a></Button></div><p className="reassurance"><ShieldCheck size={14} /> No pressure. No obligation. Just a conversation.</p></div>
+      <img className="hero-photo" src={heroImage} alt="Illustrative contemporary home in an Abuja-inspired setting" width={1920} height={1088} fetchPriority="high" /><div className="hero-shade" />
+      <div className="hero-inner">
+        <p className="eyebrow">Abuja, Nigeria</p>
+        <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
+        <p className="hero-lead">A good-looking estate isn’t enough.</p>
+        <p className="hero-copy">Before you commit your hard-earned money, understand the documentation, the location, the development potential and the opportunity itself.</p>
+        <div className="hero-actions"><Cta /></div>
+        <p className="reassurance">No pressure. No obligation. Just a conversation.</p>
+      </div>
       <span className="image-caption">Illustrative residence. Not a Tamalux project photograph.</span>
     </section>
-    <div className="trust-strip"><div className="trust-inner">{[{icon:ShieldCheck,text:'Documentation-led guidance'},{icon:MapPin,text:'Abuja location insight'},{icon:Handshake,text:'Your goals come first'},{icon:MessageCircle,text:'No-pressure consultation'}].map(({icon:Icon,text}) => <div className="trust-item" key={text}><Icon />{text}</div>)}</div></div>
-    <section id="approach" className="section"><div className="section-inner question-section"><div><Eyebrow>Before you commit</Eyebrow><h2>The real question isn’t<br />“How cheap is the land?”<br /><span>It’s “What am I actually buying?”</span></h2><p className="section-copy">An attractive offer doesn’t automatically mean a good investment. The right questions today can help you avoid uncertainty, delays and financial stress tomorrow.</p><p className="mini-statement"><ShieldCheck /> Informed buyers investigate before they commit.</p></div><div className="question-list">{['Is the documentation in order?', 'What is happening around the location?', 'What development is planned or taking place?', 'Does it fit my budget and objective?', 'Who am I actually buying from?'].map(q => <div className="question-row" key={q}><Check />{q}</div>)}<Button variant="link" className="px-0 mt-5 text-xs" onClick={() => consult()}>Ask the right questions with Tamalux <ArrowUpRight /></Button></div></div></section>
-    <section id="services" className="section services-section"><div className="section-inner"><div className="section-heading"><div><Eyebrow>That’s where Tamalux comes in</Eyebrow><h2>More information.<br />Less guesswork.</h2></div><p className="section-copy">Tamalux Homes & Properties helps individuals, families and investors identify, evaluate and pursue suitable property opportunities across Abuja.</p></div><div className="service-grid">{services.map(({icon:Icon,title,text}) => <article className="service-item" key={title}><Icon /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-    <section id="property-goals" className="section"><div className="section-inner"><div className="goals-heading"><Eyebrow>Your next chapter</Eyebrow><h2>What does your next property move look like?</h2><p className="section-copy">Start with your goal. We’ll help you understand your options.</p></div><div className="goal-grid">{goals.map(({icon:Icon,title,goal,text,action}) => <article className="goal-card" key={goal}><Icon className="goal-icon" /><h3>{title}</h3><p>{text}</p><Button variant="link" className="goal-link" onClick={() => consult(goal)}>{action}<ArrowUpRight /></Button></article>)}</div></div></section>
-    <section className="section evidence-band"><div className="section-inner evidence-content"><div><Eyebrow>Confidence comes from evidence</Eyebrow><h2>Don’t just look at the promise.<br />Ask to see the work.</h2><p className="section-copy">Discuss the actual estate location, available documentation and development status with a consultant before making a commitment.</p><Button className="large-cta mt-6" variant="consultation" onClick={() => consult()}>Discuss a property & its documentation <ArrowUpRight /></Button></div><div className="evidence-details">{['Estate location', 'Roads & drainage', 'Site development', 'Infrastructure status', 'Survey & site plans', 'Transaction documentation'].map(item => <div key={item}><ClipboardCheck />{item}</div>)}</div></div></section>
-    <section className="section"><div className="section-inner checklist-section"><div><Eyebrow>A decision worth getting right</Eyebrow><h2>Before you send money,<br />ask what matters.</h2><p className="section-copy">You don’t need to know everything about Abuja real estate. You do need to know what you’re paying for.</p></div><div className="checklist">{['Who owns the property?', 'What documentation supports the transaction?', 'Where exactly is the property located?', 'What development is taking place around the area?', 'What am I actually paying for?', 'What are the terms of the transaction?'].map((q,i) => <div className="checklist-item" key={q}><span>0{i+1}</span>{q}</div>)}</div></div></section>
-    <section id="consultation" className="section contact-section"><div className="section-inner contact-grid"><div className="contact-copy"><Eyebrow>Let’s talk about your next move</Eyebrow><h2>Your property goals.<br />A clearer way forward.</h2><p className="section-copy">Tell us your budget, preferred location, reason for buying and timeline. We’ll help you understand the available options and the questions to ask before making a decision.</p><div className="contact-reassurance"><ShieldCheck /><span><strong>No obligation. No pressure.</strong><br /><span className="text-muted-foreground">Just a conversation about what you’re looking for.</span></span></div><Button variant="link" className="px-0 mt-6 text-xs" onClick={() => consult('Property guidance', 'WhatsApp')}><MessageCircle /> Prefer WhatsApp? Request a conversation <ArrowUpRight /></Button></div><ConsultationForm /></div></section>
-    <footer className="footer"><div className="section-inner"><div className="footer-top"><div><Brand /><p className="mt-4 text-xs opacity-70">Property decisions made with better information.</p></div><div className="footer-location"><MapPin size={16} /> Abuja, Federal Capital Territory, Nigeria</div></div><div className="footer-bottom"><p>Property values, development potential and investment outcomes can vary. Tamalux Homes & Properties provides guidance and information to help clients make informed decisions; no investment return is guaranteed.</p><span>© {new Date().getFullYear()} Tamalux Homes & Properties LTD</span></div></div></footer>
-    <div className="mobile-contact"><Button variant="consultation" onClick={() => consult()}><Phone /> Speak with a consultant <ArrowUpRight /></Button></div>
-    <Dialog open={Boolean(enquiry)} onOpenChange={open => { if (!open) setEnquiry(undefined); }}><DialogContent className="consultation-dialog max-h-[90dvh] overflow-y-auto max-w-xl p-5"><DialogTitle>Let’s talk about your property goals.</DialogTitle><DialogDescription>No pressure. No obligation. Just a conversation.</DialogDescription>{enquiry && <ConsultationForm key={`${enquiry.goal}-${enquiry.method}`} selectedGoal={enquiry.goal} contactMethod={enquiry.method} />}</DialogContent></Dialog>
+
+    <section className="section"><div className="sales-copy">
+      <h2>The real question isn’t “How cheap is the land?” It’s “What am I actually buying?”</h2>
+      <p>Every year, people send money for land and homes in Abuja based on a flyer, a beautiful 3D render or a price that looked too good to miss. Many only discover the problems later: documentation that doesn’t hold up, a location that isn’t what they pictured, or development that never arrives.</p>
+      <p>An attractive offer doesn’t automatically mean a good investment. The right questions today can save you from uncertainty, delays and financial stress tomorrow.</p>
+    </div></section>
+
+    <section className="section services-section"><div className="sales-copy">
+      <h2>Before you send money, ask what matters.</h2>
+      <ol className="sales-list">
+        <li>Who owns the property?</li>
+        <li>What documentation supports the transaction?</li>
+        <li>Where exactly is the property located?</li>
+        <li>What development is taking place around the area?</li>
+        <li>What am I actually paying for?</li>
+        <li>What are the terms of the transaction?</li>
+      </ol>
+      <p>You don’t need to know everything about Abuja real estate. You do need to know what you’re paying for.</p>
+      <Cta label="Ask these questions on WhatsApp" />
+    </div></section>
+
+    <section className="section"><div className="sales-copy">
+      <h2>That’s where Tamalux comes in.</h2>
+      <p>Tamalux Homes & Properties helps individuals, families and investors identify, evaluate and pursue suitable property opportunities across Abuja — whether you want to buy land, build a home, invest or sell.</p>
+      <p>We walk you through title and documentation, location and market insight, estate development, land banking opportunities and the terms of each transaction, so you decide with clarity, not guesswork.</p>
+      <p><strong>Don’t just look at the promise. Ask to see the work.</strong> Discuss the actual estate location, available documentation and development status with a consultant before you make any commitment.</p>
+    </div></section>
+
+    <section className="section evidence-band"><div className="sales-copy">
+      <h2>Your property goals. A clearer way forward.</h2>
+      <p>Send us a message on WhatsApp. Tell us your budget, preferred location and timeline, and a Tamalux consultant will help you understand your options and the questions to ask before making a decision.</p>
+      <Cta />
+      <p className="reassurance">No pressure. No obligation. Just a conversation.</p>
+    </div></section>
+
+    <footer className="footer"><div className="section-inner"><div className="footer-bottom"><p>Property values, development potential and investment outcomes can vary. Tamalux Homes & Properties provides guidance to help clients make informed decisions; no investment return is guaranteed.</p><span>© {new Date().getFullYear()} Tamalux Homes & Properties LTD · Abuja, FCT</span></div></div></footer>
+
+    <div className="mobile-contact"><Cta label="Chat on WhatsApp" /></div>
   </main>;
 }
