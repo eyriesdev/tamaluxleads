@@ -9,6 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        consultation: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm shadow-none",
+        heroOutline: "border border-hero-foreground/50 text-hero-foreground hover:bg-hero-foreground/10 rounded-sm",
+        whatsapp: "bg-whatsapp text-hero-foreground hover:bg-whatsapp/90 rounded-sm shadow-none",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:

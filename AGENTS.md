@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Application rules
+- Keep the landing page on the index route and shared visual tokens in the global stylesheet, so the first screen and theme stay consistent.
+- Consultation requests permit validated anonymous inserts only; never expose visitor contact records through public read policies.
+- Keep generated aspirational imagery explicitly labeled and separate from genuine project evidence, so it cannot be mistaken for a completed company development.
