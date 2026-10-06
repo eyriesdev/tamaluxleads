@@ -1,5 +1,3 @@
-Absolutely. Since this is for the **Tamalux Homes & Properties landing page**, I’d make the README professional and developer-friendly, while documenting the conversion strategy, setup, deployment, and customization points.
-
 # Tamalux Homes & Properties — Landing Page
 
 A modern, conversion-focused landing page for **Tamalux Homes & Properties LTD**, designed to turn real-estate advertising traffic into qualified customer conversations.
