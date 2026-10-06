@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
-import { FileKey, FileBadge, MapPinned, FileSignature, Stamp, Landmark, UserCheck, FileCheck, MapPin, Building2, ReceiptText, Scale } from 'lucide-react';
+import { IonIcon } from "@/components/ion-icon";
+import type { IonIconName } from "@/lib/ionicons";
 import heroImage from '@/assets/property-residence.jpg.asset.json';
 import logo from '@/assets/tamalux-logo.png.asset.json';
 import landImage from '@/assets/property-land.jpg.asset.json';
@@ -24,7 +25,7 @@ export const Route = createFileRoute('/')({
 });
 
 function Cta() {
-  return <Button variant="whatsapp" asChild className="whatsapp-contact-cta"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Chat with a Tamalux Consultant on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.2 1.6 6L0 24l6.4-1.7c1.7.9 3.7 1.4 5.7 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.4 6.6 2 12.1 2s9.9 4.4 9.9 9.9-4.4 9.8-9.9 9.8Zm5.4-7.3c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.8.6.8.2 1.5.2 2.1.1.6-.1 1.8-.8 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4Z" /></svg><span>Contact us on WhatsApp</span></a></Button>;
+  return <Button variant="whatsapp" asChild className="whatsapp-contact-cta"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Chat with a Tamalux Consultant on WhatsApp"><IonIcon name="whatsapp" /><span>Contact us on WhatsApp</span></a></Button>;
 }
 
 const goals = [
@@ -34,22 +35,22 @@ const goals = [
   { title: 'I want to sell property', copy: 'Get professional guidance on positioning and marketing your property to potential buyers.', image: sellImage, interest: 'selling my property in Abuja' },
 ];
 
-const compliances = [
-  { name: 'Right of Occupancy', short: 'R of O', icon: FileKey, copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
-  { name: 'Certificate of Occupancy', short: 'C of O', icon: FileBadge, copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
-  { name: 'Registered Survey Plan', short: 'Survey', icon: MapPinned, copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
-  { name: 'Deed of Assignment / Sublease', short: 'Transfer', icon: FileSignature, copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
-  { name: 'Ministerial Consent', short: 'Consent', icon: Stamp, copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
-  { name: 'FCTA Approvals', short: 'Planning', icon: Landmark, copy: 'Applicable planning and development approvals for the property and its intended use.' },
+const compliances: { name: string; short: string; icon: IonIconName; copy: string }[] = [
+  { name: 'Right of Occupancy', short: 'R of O', icon: "documentLock", copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
+  { name: 'Certificate of Occupancy', short: 'C of O', icon: "ribbon", copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
+  { name: 'Registered Survey Plan', short: 'Survey', icon: "map", copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
+  { name: 'Deed of Assignment / Sublease', short: 'Transfer', icon: "transfer", copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
+  { name: 'Ministerial Consent', short: 'Consent', icon: "approval", copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
+  { name: 'FCTA Approvals', short: 'Planning', icon: "planning", copy: 'Applicable planning and development approvals for the property and its intended use.' },
 ];
 
-const questions = [
-  { question: 'Who owns the property?', stake: 'A name on a form is not proof of ownership.', icon: UserCheck },
-  { question: 'What documentation supports the transaction?', stake: 'Documents are the difference between a home and a dispute.', icon: FileCheck },
-  { question: 'Where exactly is the property located?', stake: 'A description is not a location. Know the ground you are buying.', icon: MapPin },
-  { question: 'What development is taking place around the area?', stake: 'What rises around a property shapes what it can become.', icon: Building2 },
-  { question: 'What am I actually paying for?', stake: 'Every naira should be accounted for — the land, the title and what comes with both.', icon: ReceiptText },
-  { question: 'What are the terms of the transaction?', stake: 'Clear terms today prevent costly surprises tomorrow.', icon: Scale },
+const questions: { question: string; stake: string; icon: IonIconName }[] = [
+  { question: 'Who owns the property?', stake: 'A name on a form is not proof of ownership.', icon: "owner" },
+  { question: 'What documentation supports the transaction?', stake: 'Documents are the difference between a home and a dispute.', icon: "paperwork" },
+  { question: 'Where exactly is the property located?', stake: 'A description is not a location. Know the ground you are buying.', icon: "pin" },
+  { question: 'What development is taking place around the area?', stake: 'What rises around a property shapes what it can become.', icon: "development" },
+  { question: 'What am I actually paying for?', stake: 'Every naira should be accounted for — the land, the title and what comes with both.', icon: "payment" },
+  { question: 'What are the terms of the transaction?', stake: 'Clear terms today prevent costly surprises tomorrow.', icon: "terms" },
 ];
 
 const nextSteps = [
@@ -91,7 +92,7 @@ function Index() {
 
     <section id="services" className="section services-section"><div className="sales-copy">
       <h2><span className="copy-emphasis">Before you send money,</span> ask what matters.</h2>
-      <ol className="sales-list">{questions.map((item) => <li key={item.question}><span className="question-icon"><item.icon aria-hidden="true" strokeWidth={1.5} /></span><span className="question-copy"><strong className="question-text">{item.question}</strong><em className="question-stake">{item.stake}</em></span></li>)}</ol>
+      <ol className="sales-list">{questions.map((item) => <li key={item.question}><span className="question-icon"><IonIcon name={item.icon} /></span><span className="question-copy"><strong className="question-text">{item.question}</strong><em className="question-stake">{item.stake}</em></span></li>)}</ol>
       <p>You don’t need to know everything about Abuja real estate. You do need to <strong className="copy-emphasis">know what you’re paying for.</strong></p>
       <Cta />
     </div></section>
@@ -105,7 +106,7 @@ function Index() {
 
     <section className="section compliance-section" aria-labelledby="compliance-title"><div className="section-inner">
       <div className="compliance-heading"><h2 id="compliance-title">Your property should come with <span className="copy-emphasis">more than a promise.</span></h2><p>All our properties meet applicable <strong>land title, ownership documentation and FCTA approval requirements.</strong> Here’s what matters for your purchase.</p></div>
-      <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><div className="compliance-visual"><item.icon className="compliance-icon" aria-hidden="true" strokeWidth={1.5} /><span className="compliance-short">{item.short}</span></div><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
+      <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><div className="compliance-visual"><IonIcon name={item.icon} className="compliance-icon" /><span className="compliance-short">{item.short}</span></div><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
       <div className="compliance-close"><p><strong className="copy-emphasis">Know the title. See the documents.</strong><br />Ask your consultant which documents and approvals apply to your chosen property and transaction.</p><Cta /></div>
     </div></section>
 
@@ -113,7 +114,7 @@ function Index() {
       <div className="client-goals-heading"><h2 id="client-goals-title">Which property goal are you working toward?</h2></div>
       <div className="client-goals-grid">{goals.map((goal) => <Button variant="whatsapp" asChild className="client-goal" key={goal.title}><a href={whatsappUrl(`Hello Tamalux Consultant, I saw your YouTube Ads, and I am interested in ${goal.interest}. My name is ......`)} target="_blank" rel="noopener noreferrer" aria-label={`${goal.title} — chat on WhatsApp`}>
         <img src={goal.image.url} alt="" width={1000} height={750} loading="lazy" />
-        <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p><span className="goal-contact">Let’s talk on WhatsApp <span aria-hidden="true">↗</span></span></div>
+        <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p><span className="goal-contact">Let’s talk on WhatsApp <IonIcon name="forward" className="goal-arrow" /></span></div>
       </a></Button>)}</div>
       <div className="goals-cta"><Cta /></div>
     </div></section>
