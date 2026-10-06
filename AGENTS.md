@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Application rules
+- Derive sitemap URLs from required staticData.sitemap route decisions using the versioned helper; omit lastmod unless a page-specific authoritative timestamp exists.
 - Keep the landing page on the index route and shared visual tokens in the global stylesheet, so the first screen and theme stay consistent.
 - Define goal-specific WhatsApp introductions alongside the goal data and use one link builder for all contact links, so each goal keeps the correct destination and message.
 - Consultation requests permit validated anonymous inserts only; never expose visitor contact records through public read policies.
