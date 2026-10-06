@@ -69,8 +69,14 @@
 .sales-page .services-section h2,.tamalux-approach h2 { text-align: center; }
 .sales-copy>.eyebrow { justify-content: center; margin: 0; color: var(--primary); }
 .sales-page .sales-list { list-style: none; padding: 0; counter-reset: questions; gap: 0; }
-.sales-list li { display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--border); counter-increment: questions; font-size: 16px; font-weight: 550; }
-.sales-list li::before { content: '0' counter(questions); color: var(--primary); font-size: 12px; font-weight: 700; flex: 0 0 24px; }
+.sales-list li { display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--border); counter-increment: questions; font-size: 16px; font-weight: 550; }
+.sales-list li::before { content: '0' counter(questions); color: var(--primary); font-size: 12px; font-weight: 700; flex: 0 0 24px; padding-top: 7px; }
+.question-icon { display: grid; place-items: center; width: 52px; height: 52px; flex-shrink: 0; border-radius: 6px; color: var(--copy-emphasis); background: color-mix(in oklch, var(--copy-emphasis) 7%, var(--background)); border: 1px solid color-mix(in oklch, var(--copy-emphasis) 20%, var(--border)); }
+.question-icon svg { width: 26px; height: 26px; }
+.question-copy { display: grid; gap: 7px; }
+.question-text { font-weight: 650; }
+.question-stake { font-style: normal; color: var(--muted-foreground); font-size: 14px; line-height: 1.7; font-weight: 450; }
+@media (max-width: 700px) { .question-icon { width: 42px; height: 42px; } .question-icon svg { width: 21px; height: 21px; } .question-stake { font-size: 13px; } .sales-list li { gap: 12px; padding: 15px 0; } }
 .client-goals { background: var(--secondary); }
 .client-goals-heading { max-width: 720px; text-align: center; margin: 0 auto 40px; }
 .client-goals-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
