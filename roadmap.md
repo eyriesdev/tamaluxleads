@@ -1,4 +1,6 @@
 # Tamalux lead acquisition
+- [x] Review the sales page and implement essential clarity, next-step and buyer-question improvements; verify WhatsApp handoff and layouts.
+- [ ] Add verified property availability, prices, company credentials and customer proof (awaiting owner-supplied material).
 - [x] Add matching document, survey, transfer and approval icons to all six compliance items.
 - [x] Fix the missing sitemap SEO finding and verify its robots.txt reference.
 - [x] Build the branded trust-led landing page and consultation form.

@@ -91,3 +91,39 @@
 @media (max-width: 1000px) { .client-goals-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .sales-page .hero h1 { font-size: 48px; } }
 @media (max-width: 700px) { .sales-page .site-header { height: 76px; } .sales-page .hero { min-height: 580px; } .sales-page .hero-inner { width: 88%; padding: 42px 0 54px; } .sales-page .hero h1 { font-size: 36px; margin: 20px auto; } .sales-page .hero-copy { font-size: 14px; } .sales-page .hero-lead { font-size: 17px; } .sales-page .hero-actions { align-items: center; margin-top: 26px; } .whatsapp-contact-cta { padding: 15px 20px; font-size: 14px; min-height: 56px; } .sales-page .section { padding: 58px 6%; } .sales-page .section h2 { font-size: 29px; } .sales-page .sales-copy { font-size: 15px; gap: 18px; } .sales-list li { font-size: 14px; gap: 10px; } .client-goals-grid { gap: 14px; } .client-goal,.client-goal-copy { min-height: 300px; } .client-goal-copy { padding: 20px 14px; } .client-goal h3 { font-size: 18px; } .client-goal p { font-size: 12px; } .sales-page .mobile-contact { display: flex; justify-content: center; padding: 10px 6%; box-shadow: var(--shadow-soft); } .mobile-contact>.whatsapp-contact-cta { width: 100%; min-height: 48px; padding: 10px 18px; } .sales-page { padding-bottom: 70px; } }
 @media (max-width: 380px) { .client-goals-grid { grid-template-columns: 1fr; } .client-goal,.client-goal-copy { min-height: 320px; } }
+.sales-page .hero-company { font-size: 16px; font-weight: 600; margin: 0 auto 18px; }
+.sales-page .hero-contact-context { max-width: 490px; margin: 18px auto 0; font-size: 14px; line-height: 1.6; color: var(--hero-foreground); }
+.sales-page .hero { min-height: 0; }
+.sales-page .hero-inner { padding: 40px 0 48px; }
+.next-steps-heading { max-width: 790px; margin: 0 auto 40px; text-align: center; }
+.next-steps-heading p { font-size: 17px; line-height: 1.8; }
+.next-steps-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; list-style: none; padding: 0; margin: 0; }
+.next-steps-list li { border-top: 2px solid var(--border); padding-top: 24px; }
+.step-number { display: block; color: var(--copy-emphasis); font-size: 14px; font-weight: 750; margin-bottom: 18px; }
+.next-steps-list h3 { font-size: 21px; line-height: 1.4; font-weight: 750; margin: 0 0 12px; }
+.next-steps-list p { font-size: 15px; line-height: 1.8; color: var(--muted-foreground); }
+.buyer-questions-section { background: var(--secondary); border-top: 1px solid var(--border); }
+.buyer-questions-section h2 { text-align: center; }
+.buyer-questions details { border-bottom: 1px solid var(--border); }
+.buyer-questions summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; list-style: none; cursor: pointer; font-size: 17px; line-height: 1.5; font-weight: 650; }
+.buyer-questions summary::-webkit-details-marker { display: none; }
+.buyer-questions summary:focus-visible { outline: 2px solid var(--whatsapp); outline-offset: 4px; border-radius: 3px; }
+.faq-marker { position: relative; width: 18px; height: 18px; flex-shrink: 0; color: var(--copy-emphasis); }
+.faq-marker::before,.faq-marker::after { content: ''; position: absolute; background: currentColor; }
+.faq-marker::before { width: 14px; height: 2px; top: 8px; left: 2px; }
+.faq-marker::after { width: 2px; height: 14px; left: 8px; top: 2px; }
+.buyer-questions details[open] .faq-marker::after { display: none; }
+.buyer-questions details p { margin: 0 0 24px; font-size: 16px; line-height: 1.8; }
+@media (max-width: 700px) {
+  .sales-page .hero-inner { padding: 30px 0 38px; }
+  .sales-page .hero-company { font-size: 14px; }
+  .sales-page .hero-contact-context { font-size: 13px; }
+  .next-steps-list { grid-template-columns: 1fr; gap: 26px; }
+  .next-steps-heading { margin-bottom: 30px; }
+  .next-steps-heading p { font-size: 15px; }
+  .next-steps-list h3 { font-size: 19px; }
+  .buyer-questions summary { font-size: 15px; gap: 16px; padding: 20px 0; }
+  .buyer-questions details p { font-size: 15px; }
+}
+@media (max-width: 700px) and (max-height: 700px) { .sales-page .hero h1 { font-size: 30px; } .sales-page .hero-inner { padding: 20px 0 28px; } }
+@media (min-width: 701px) and (max-height: 700px) { .sales-page .hero-inner { padding: 16px 0 24px; } .sales-page .hero h1 { font-size: 38px; margin: 12px auto; } .sales-page .hero-actions { margin-top: 18px; } .sales-page .hero-company { margin-bottom: 10px; } .sales-page .hero-contact-context { margin-top: 12px; } }
