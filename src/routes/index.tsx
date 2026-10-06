@@ -43,6 +43,20 @@ const compliances = [
   { name: 'FCTA Approvals', short: 'Planning', icon: Landmark, copy: 'Applicable planning and development approvals for the property and its intended use.' },
 ];
 
+const nextSteps = [
+  { title: 'Start with your goal', copy: 'Tell us whether you want to buy, build, invest or sell. Share your preferred Abuja location, budget and timeline.' },
+  { title: 'Discuss the right questions', copy: 'Talk through suitable options, the property’s location, available documentation and transaction terms with a Tamalux consultant.' },
+  { title: 'Verify before you decide', copy: 'Ask for the exact site location, an inspection arrangement and the relevant documents. Review the terms before making a commitment.' },
+];
+
+const buyerQuestions = [
+  { question: 'What properties are available, and what do they cost?', answer: 'Availability and pricing depend on the location and property. Share your goal and budget on WhatsApp, then ask for current options, plot sizes, the full price and any additional charges for the property you are considering.' },
+  { question: 'Can I inspect a property before committing?', answer: 'Ask your consultant about inspection arrangements for your chosen property. Confirm the exact site location and current development status before making any payment.' },
+  { question: 'Does every property need all six documents?', answer: 'The documents and approvals required depend on the property’s title, intended use and type of transaction. Ask which apply to your chosen property, request the relevant records and seek independent legal advice before signing.' },
+  { question: 'Are payment plans available?', answer: 'Ask whether a payment plan is available for the specific property. If one is offered, request the deposit, instalment schedule, total payable, additional charges and cancellation terms in writing before agreeing.' },
+  { question: 'What should I send in my first message?', answer: 'Your name, property goal, preferred location, approximate budget and timeline are enough to begin the discussion. Keep sensitive identity and financial documents out of your opening message.' },
+];
+
 function Index() {
   return <main id="top" className="sales-page">
     <header className="site-header sales-header"><span className="brand"><span className="logo-box"><img src={logo.url} alt="Tamalux Homes & Properties logo" width={58} height={58} /></span><span className="brand-name">TAMALUX<span className="brand-sub">HOMES & PROPERTIES LTD</span></span></span></header>
@@ -51,9 +65,11 @@ function Index() {
         <img className="hero-photo" src={heroImage.url} alt="" width={1920} height={1280} fetchPriority="high" /><div className="hero-shade" />
       <div className="hero-inner">
         <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
-        <p className="hero-lead">A good-looking estate isn’t enough.</p>
+        <p className="hero-lead">Buy land. Build a home. Invest. Sell property.</p>
+        <p className="hero-company">With Tamalux Homes &amp; Properties LTD, Abuja.</p>
         <p className="hero-copy">Before you commit your <strong>hard-earned money</strong>, understand the documentation, the location, the development potential and the opportunity itself.</p>
         <div className="hero-actions"><Cta /></div>
+        <p className="hero-contact-context">Discuss your goal, suitable options and the documents to review before you commit.</p>
       </div>
     </section>
 
@@ -64,7 +80,7 @@ function Index() {
       <p>That’s why informed buyers don’t simply chase cheap land. <strong className="copy-emphasis">They investigate before they commit.</strong></p>
     </div></section>
 
-    <section className="section services-section"><div className="sales-copy">
+    <section id="services" className="section services-section"><div className="sales-copy">
       <h2><span className="copy-emphasis">Before you send money,</span> ask what matters.</h2>
       <ol className="sales-list">
         <li>Who owns the property?</li>
@@ -98,6 +114,16 @@ function Index() {
         <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p><span className="goal-contact">Let’s talk on WhatsApp <span aria-hidden="true">↗</span></span></div>
       </a></Button>)}</div>
       <div className="goals-cta"><Cta /></div>
+    </div></section>
+
+    <section className="section next-steps-section" aria-labelledby="next-steps-title"><div className="section-inner">
+      <div className="next-steps-heading"><h2 id="next-steps-title">A clear next step. <span className="copy-emphasis">Not a leap of faith.</span></h2><p>Your first conversation starts with what you want to achieve.</p></div>
+      <ol className="next-steps-list">{nextSteps.map((step, index) => <li key={step.title}><span className="step-number" aria-hidden="true">0{index + 1}</span><h3>{step.title}</h3><p>{step.copy}</p></li>)}</ol>
+    </div></section>
+
+    <section className="section buyer-questions-section" aria-labelledby="buyer-questions-title"><div className="sales-copy">
+      <h2 id="buyer-questions-title">Before you take the next step, <span className="copy-emphasis">get clarity.</span></h2>
+      <div className="buyer-questions">{buyerQuestions.map((item) => <details key={item.question}><summary>{item.question}<span className="faq-marker" aria-hidden="true" /></summary><p>{item.answer}</p></details>)}</div>
     </div></section>
 
     <section className="section evidence-band photo-close"><img className="closing-photo" src={investImage.url} alt="" width={1400} height={933} loading="lazy" /><div className="closing-shade" /><div className="sales-copy">
