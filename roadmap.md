@@ -1,5 +1,5 @@
 # Tamalux lead acquisition
-- [ ] Fix the missing sitemap SEO finding and verify its robots.txt reference.
+- [x] Fix the missing sitemap SEO finding and verify its robots.txt reference.
 - [x] Build the branded trust-led landing page and consultation form.
 - [x] Verify consultation submission and page layout.
 - [x] Center the opening, add pictured property goals, use the supplied WhatsApp graphic, and simplify closing copy.
