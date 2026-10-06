@@ -11,6 +11,7 @@ const whatsappUrl = (message: string) => `https://wa.me/2348157035260?text=${enc
 const WHATSAPP_URL = whatsappUrl('Hello Tamalux Consultant, I saw your YouTube Ads, I am interested in genuine Abuja Property. My name is ......');
 
 export const Route = createFileRoute('/')({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: 'Genuine Abuja Property | Tamalux Homes & Properties' },
     { name: 'description', content: 'Before you buy property in Abuja, know what you are buying. Chat with a Tamalux consultant on WhatsApp.' },
