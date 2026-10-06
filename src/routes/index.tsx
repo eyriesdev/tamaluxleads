@@ -2,6 +2,11 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/abuja-residence.jpg';
 import logo from '@/assets/tamalux-logo.png.asset.json';
+import whatsappGraphic from '@/assets/whatsapp-chat.png.asset.json';
+import landImage from '@/assets/goal-land.jpg';
+import homeImage from '@/assets/goal-home.jpg';
+import investImage from '@/assets/goal-invest.jpg';
+import sellImage from '@/assets/goal-sell.jpg';
 
 const WHATSAPP_URL = `https://wa.me/2348157035260?text=${encodeURIComponent('Hello Tamalux Consultant, I saw your YouTube Ads, I am interested in genuine Abuja Property. My name is ......')}`;
 
@@ -16,9 +21,16 @@ export const Route = createFileRoute('/')({
   component: Index,
 });
 
-function Cta({ label = 'Chat with a Tamalux consultant on WhatsApp' }: { label?: string }) {
-  return <Button variant="whatsapp" asChild className="large-cta"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{label}</a></Button>;
+function Cta() {
+  return <Button variant="whatsapp" asChild className="whatsapp-graphic-cta"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Chat with a Tamalux Consultant on WhatsApp"><img src={whatsappGraphic.url} alt="WhatsApp — Chat with us now" width={807} height={247} /></a></Button>;
 }
+
+const goals = [
+  { title: 'I want to buy land', copy: 'Find an opportunity that fits your location preference, budget and long-term objective.', image: landImage, alt: 'Concept illustration of surveyed land' },
+  { title: 'I want to build a home', copy: 'Explore residential opportunities suitable for creating a home in Abuja.', image: homeImage, alt: 'Concept illustration of a contemporary family home' },
+  { title: 'I want to invest', copy: 'Discuss land banking and property opportunities based on your investment objectives and risk considerations.', image: investImage, alt: 'Concept illustration of property investment planning' },
+  { title: 'I want to sell property', copy: 'Get professional guidance on positioning and marketing your property to potential buyers.', image: sellImage, alt: 'Concept illustration of a homeowner meeting a property consultant' },
+];
 
 function Index() {
   return <main id="top" className="sales-page">
@@ -32,15 +44,15 @@ function Index() {
         <p className="hero-lead">A good-looking estate isn’t enough.</p>
         <p className="hero-copy">Before you commit your hard-earned money, understand the documentation, the location, the development potential and the opportunity itself.</p>
         <div className="hero-actions"><Cta /></div>
-        <p className="reassurance">No pressure. No obligation. Just a conversation.</p>
       </div>
-      <span className="image-caption">Illustrative residence. Not a Tamalux project photograph.</span>
+      <span className="image-caption">Concept image</span>
     </section>
 
     <section className="section"><div className="sales-copy">
       <h2>The real question isn’t “How cheap is the land?” It’s “What am I actually buying?”</h2>
-      <p>Every year, people send money for land and homes in Abuja based on a flyer, a beautiful 3D render or a price that looked too good to miss. Many only discover the problems later: documentation that doesn’t hold up, a location that isn’t what they pictured, or development that never arrives.</p>
-      <p>An attractive offer doesn’t automatically mean a good investment. The right questions today can save you from uncertainty, delays and financial stress tomorrow.</p>
+      <p>Every day, people see attractive property offers and exciting prices. But a beautiful location doesn’t automatically mean a good investment.</p>
+      <p>Because the wrong property decision can leave you with more than a bad investment. It can leave you with <strong>years of uncertainty, delays and financial stress.</strong></p>
+      <p>That’s why informed buyers don’t simply chase cheap land. <strong>They investigate before they commit.</strong></p>
     </div></section>
 
     <section className="section services-section"><div className="sales-copy">
@@ -54,7 +66,7 @@ function Index() {
         <li>What are the terms of the transaction?</li>
       </ol>
       <p>You don’t need to know everything about Abuja real estate. You do need to know what you’re paying for.</p>
-      <Cta label="Ask these questions on WhatsApp" />
+      <Cta />
     </div></section>
 
     <section className="section"><div className="sales-copy">
@@ -64,15 +76,24 @@ function Index() {
       <p><strong>Don’t just look at the promise. Ask to see the work.</strong> Discuss the actual estate location, available documentation and development status with a consultant before you make any commitment.</p>
     </div></section>
 
-    <section className="section evidence-band"><div className="sales-copy">
-      <h2>Your property goals. A clearer way forward.</h2>
-      <p>Send us a message on WhatsApp. Tell us your budget, preferred location and timeline, and a Tamalux consultant will help you understand your options and the questions to ask before making a decision.</p>
-      <Cta />
-      <p className="reassurance">No pressure. No obligation. Just a conversation.</p>
+    <section className="section client-goals" aria-labelledby="client-goals-title"><div className="section-inner">
+      <div className="client-goals-heading"><h2 id="client-goals-title">Which property goal are you working toward?</h2></div>
+      <div className="client-goals-grid">{goals.map((goal) => <article className="client-goal" key={goal.title}>
+        <img src={goal.image} alt={goal.alt} width={1024} height={768} loading="lazy" />
+        <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p></div>
+      </article>)}</div>
+      <p className="concept-note">Concept imagery — not project listings or client photographs.</p>
+      <div className="goals-cta"><Cta /></div>
     </div></section>
 
-    <footer className="footer"><div className="section-inner"><div className="footer-bottom"><p>Property values, development potential and investment outcomes can vary. Tamalux Homes & Properties provides guidance to help clients make informed decisions; no investment return is guaranteed.</p><span>© {new Date().getFullYear()} Tamalux Homes & Properties LTD · Abuja, FCT</span></div></div></footer>
+    <section className="section evidence-band"><div className="sales-copy">
+      <h2>Your property goals. A clearer way forward.</h2>
+      <p>You don’t need to know everything about Abuja real estate before speaking to us.</p>
+      <p><strong>Tell us what you’re looking for.</strong> Your budget. Your preferred location. Your reason for buying. Your timeline.</p>
+      <p>We’ll help you understand the available options and the questions you should be asking before making a decision.</p>
+      <Cta />
+    </div></section>
 
-    <div className="mobile-contact"><Cta label="Chat on WhatsApp" /></div>
+    <div className="mobile-contact"><Cta /></div>
   </main>;
 }
