@@ -30,3 +30,26 @@
 .sales-copy h2 { margin-bottom: .4rem; }
 .sales-copy .large-cta { align-self: flex-start; margin-top: .75rem; }
 .sales-list { list-style: decimal; padding-left: 1.4rem; display: grid; gap: .5rem; font-weight: 600; }
+.sales-page .hero-inner { text-align: center; max-width: 900px; padding: 56px 0 64px; }
+.sales-page .hero h1 { max-width: 850px; margin-left: auto; margin-right: auto; }
+.sales-page .hero .eyebrow,.sales-page .hero-actions { justify-content: center; }
+.sales-page .hero-copy { margin-left: auto; margin-right: auto; max-width: 650px; }
+.sales-page .hero-shade { background: linear-gradient(180deg, oklch(.17 .022 245 / .77), oklch(.17 .022 245 / .82)); }
+.sales-page .hero { min-height: 590px; }
+.whatsapp-graphic-cta { display: inline-flex; width: 320px; max-width: 100%; height: auto; padding: 0; border: 0; background: transparent; border-radius: 4px; overflow: hidden; flex-shrink: 0; transition: transform .2s; }
+.whatsapp-graphic-cta:hover { background: transparent; transform: translateY(-2px); }
+.whatsapp-graphic-cta img { display: block; width: 100%; height: auto; aspect-ratio: 807 / 247; }
+.sales-copy .whatsapp-graphic-cta { align-self: flex-start; margin-top: 12px; }
+.client-goals { background: var(--secondary); }
+.client-goals-heading { max-width: 720px; text-align: center; margin: 0 auto 36px; }
+.client-goals-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
+.client-goal { overflow: hidden; background: var(--background); border: 1px solid var(--border); border-radius: 6px; }
+.client-goal>img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.client-goal-copy { padding: 22px 18px; }
+.client-goal h3 { font-size: 18px; line-height: 1.4; font-weight: 750; margin: 0 0 12px; }
+.client-goal p { font-size: 14px; line-height: 1.75; color: var(--muted-foreground); margin: 0; }
+.concept-note { color: var(--muted-foreground); font-size: 11px; margin-top: 16px; text-align: center; }
+.goals-cta { display: flex; justify-content: center; margin-top: 28px; }
+@media (max-width: 1000px) { .client-goals-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) { .sales-page .hero { min-height: 590px; } .sales-page .hero-inner { padding: 40px 0 52px; } .sales-page .hero h1 { font-size: 34px; } .sales-page .hero-actions { align-items: center; } .client-goals-grid { gap: 16px; } .client-goal-copy { padding: 16px 12px; } .client-goal h3 { font-size: 16px; } .client-goal p { font-size: 13px; } .sales-copy { padding: 0; } .mobile-contact { justify-content: center; padding: 6px 5%; } .mobile-contact>.whatsapp-graphic-cta { width: 235px; height: auto; } .sales-page { padding-bottom: 85px; } }
+@media (max-width: 380px) { .client-goals-grid { grid-template-columns: 1fr; } }
