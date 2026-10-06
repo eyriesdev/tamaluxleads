@@ -7,7 +7,8 @@ import homeImage from '@/assets/property-home.jpg.asset.json';
 import investImage from '@/assets/property-invest.jpg.asset.json';
 import sellImage from '@/assets/property-sell.jpg.asset.json';
 
-const WHATSAPP_URL = `https://wa.me/2348157035260?text=${encodeURIComponent('Hello Tamalux Consultant, I saw your YouTube Ads, I am interested in genuine Abuja Property. My name is ......')}`;
+const whatsappUrl = (message: string) => `https://wa.me/2348157035260?text=${encodeURIComponent(message)}`;
+const WHATSAPP_URL = whatsappUrl('Hello Tamalux Consultant, I saw your YouTube Ads, I am interested in genuine Abuja Property. My name is ......');
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -25,10 +26,19 @@ function Cta() {
 }
 
 const goals = [
-  { title: 'I want to buy land', copy: 'Find an opportunity that fits your location preference, budget and long-term objective.', image: landImage, alt: 'Concept illustration of surveyed land' },
-  { title: 'I want to build a home', copy: 'Explore residential opportunities suitable for creating a home in Abuja.', image: homeImage, alt: 'Concept illustration of a contemporary family home' },
-  { title: 'I want to invest', copy: 'Discuss land banking and property opportunities based on your investment objectives and risk considerations.', image: investImage, alt: 'Concept illustration of property investment planning' },
-  { title: 'I want to sell property', copy: 'Get professional guidance on positioning and marketing your property to potential buyers.', image: sellImage, alt: 'Concept illustration of a homeowner meeting a property consultant' },
+  { title: 'I want to buy land', copy: 'Find an opportunity that fits your location preference, budget and long-term objective.', image: landImage, interest: 'buying genuine land in Abuja' },
+  { title: 'I want to build a home', copy: 'Explore residential opportunities suitable for creating a home in Abuja.', image: homeImage, interest: 'building a home in Abuja' },
+  { title: 'I want to invest', copy: 'Discuss land banking and property opportunities based on your investment objectives and risk considerations.', image: investImage, interest: 'investing in genuine Abuja property' },
+  { title: 'I want to sell property', copy: 'Get professional guidance on positioning and marketing your property to potential buyers.', image: sellImage, interest: 'selling my property in Abuja' },
+];
+
+const compliances = [
+  { name: 'Right of Occupancy', short: 'R of O', copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
+  { name: 'Certificate of Occupancy', short: 'C of O', copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
+  { name: 'Registered Survey Plan', short: 'Survey', copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
+  { name: 'Deed of Assignment / Sublease', short: 'Transfer', copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
+  { name: 'Ministerial Consent', short: 'Consent', copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
+  { name: 'FCTA Approvals', short: 'Planning', copy: 'Applicable planning and development approvals for the property and its intended use.' },
 ];
 
 function Index() {
@@ -38,24 +48,22 @@ function Index() {
     <section className="hero" aria-labelledby="hero-title">
         <img className="hero-photo" src={heroImage.url} alt="" width={1920} height={1280} fetchPriority="high" /><div className="hero-shade" />
       <div className="hero-inner">
-        <p className="eyebrow">Abuja, Nigeria</p>
         <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
         <p className="hero-lead">A good-looking estate isn’t enough.</p>
-        <p className="hero-copy">Before you commit your hard-earned money, understand the documentation, the location, the development potential and the opportunity itself.</p>
+        <p className="hero-copy">Before you commit your <strong>hard-earned money</strong>, understand the documentation, the location, the development potential and the opportunity itself.</p>
         <div className="hero-actions"><Cta /></div>
       </div>
     </section>
 
     <section className="section opening-copy"><div className="sales-copy">
-      <h2>The real question isn’t “How cheap is the land?” It’s “What am I actually buying?”</h2>
+      <h2>The real question isn’t “How cheap is the land?” It’s <span className="copy-emphasis">“What am I actually buying?”</span></h2>
       <p>Every day, people see attractive property offers and exciting prices. But a beautiful location doesn’t automatically mean a good investment.</p>
-      <p>Because the wrong property decision can leave you with more than a bad investment. It can leave you with <strong>years of uncertainty, delays and financial stress.</strong></p>
-      <p>That’s why informed buyers don’t simply chase cheap land. <strong>They investigate before they commit.</strong></p>
+      <p>Because the wrong property decision can leave you with more than a bad investment. It can leave you with <strong className="copy-emphasis">years of uncertainty, delays and financial stress.</strong></p>
+      <p>That’s why informed buyers don’t simply chase cheap land. <strong className="copy-emphasis">They investigate before they commit.</strong></p>
     </div></section>
 
     <section className="section services-section"><div className="sales-copy">
-      <p className="eyebrow">Clarity before commitment</p>
-      <h2>Before you send money, ask what matters.</h2>
+      <h2><span className="copy-emphasis">Before you send money,</span> ask what matters.</h2>
       <ol className="sales-list">
         <li>Who owns the property?</li>
         <li>What documentation supports the transaction?</li>
@@ -64,29 +72,33 @@ function Index() {
         <li>What am I actually paying for?</li>
         <li>What are the terms of the transaction?</li>
       </ol>
-      <p>You don’t need to know everything about Abuja real estate. You do need to know what you’re paying for.</p>
+      <p>You don’t need to know everything about Abuja real estate. You do need to <strong className="copy-emphasis">know what you’re paying for.</strong></p>
       <Cta />
     </div></section>
 
     <section className="section tamalux-approach"><div className="sales-copy">
-      <p className="eyebrow">Tamalux Homes & Properties</p>
       <h2>That’s where Tamalux comes in.</h2>
       <p>Tamalux Homes & Properties helps individuals, families and investors identify, evaluate and pursue suitable property opportunities across Abuja — whether you want to buy land, build a home, invest or sell.</p>
-      <p>We walk you through title and documentation, location and market insight, estate development, land banking opportunities and the terms of each transaction, so you decide with clarity, not guesswork.</p>
-      <p><strong>Don’t just look at the promise. Ask to see the work.</strong> Discuss the actual estate location, available documentation and development status with a consultant before you make any commitment.</p>
+      <p>We walk you through title and documentation, location and market insight, estate development, land banking opportunities and the terms of each transaction, so you decide with <strong className="copy-emphasis">clarity, not guesswork.</strong></p>
+      <p><strong className="copy-emphasis">Don’t just look at the promise. Ask to see the work.</strong> Discuss the actual estate location, available documentation and development status with a consultant before you make any commitment.</p>
+    </div></section>
+
+    <section className="section compliance-section" aria-labelledby="compliance-title"><div className="section-inner">
+      <div className="compliance-heading"><h2 id="compliance-title">Your property should come with <span className="copy-emphasis">more than a promise.</span></h2><p>All our properties meet applicable <strong>land title, ownership documentation and FCTA approval requirements.</strong> Here’s what matters for your purchase.</p></div>
+      <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><span className="compliance-short">{item.short}</span><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
+      <div className="compliance-close"><p><strong className="copy-emphasis">Know the title. See the documents.</strong><br />Ask your consultant which documents and approvals apply to your chosen property and transaction.</p><Cta /></div>
     </div></section>
 
     <section className="section client-goals" aria-labelledby="client-goals-title"><div className="section-inner">
       <div className="client-goals-heading"><h2 id="client-goals-title">Which property goal are you working toward?</h2></div>
-      <div className="client-goals-grid">{goals.map((goal) => <article className="client-goal" key={goal.title}>
+      <div className="client-goals-grid">{goals.map((goal) => <Button variant="whatsapp" asChild className="client-goal" key={goal.title}><a href={whatsappUrl(`Hello Tamalux Consultant, I saw your YouTube Ads, and I am interested in ${goal.interest}. My name is ......`)} target="_blank" rel="noopener noreferrer" aria-label={`${goal.title} — chat on WhatsApp`}>
         <img src={goal.image.url} alt="" width={1000} height={750} loading="lazy" />
-        <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p></div>
-      </article>)}</div>
+        <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p><span className="goal-contact">Let’s talk on WhatsApp <span aria-hidden="true">↗</span></span></div>
+      </a></Button>)}</div>
       <div className="goals-cta"><Cta /></div>
     </div></section>
 
     <section className="section evidence-band photo-close"><img className="closing-photo" src={investImage.url} alt="" width={1400} height={933} loading="lazy" /><div className="closing-shade" /><div className="sales-copy">
-      <p className="eyebrow">Your next property move</p>
       <h2>Let’s talk about your next property move.</h2>
       <p>You don’t need to know everything about Abuja real estate before speaking to us.</p>
       <p><strong>Tell us what you’re looking for.</strong> Your budget. Your preferred location. Your reason for buying. Your timeline.</p>

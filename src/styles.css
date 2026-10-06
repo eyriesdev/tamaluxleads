@@ -30,7 +30,22 @@
 .sales-copy h2 { margin-bottom: .4rem; }
 .sales-copy .large-cta { align-self: flex-start; margin-top: .75rem; }
 .sales-list { list-style: decimal; padding-left: 1.4rem; display: grid; gap: .5rem; font-weight: 600; }
-:root { --photo-scrim: linear-gradient(180deg, oklch(.18 .015 150 / .62), oklch(.18 .015 150 / .7)); --close-scrim: oklch(.18 .015 150 / .86); --cta-shadow: 0 8px 24px oklch(.15 .04 155 / .2); --editorial-accent: oklch(.85 .098 78); --goal-scrim: linear-gradient(180deg, transparent 10%, oklch(.17 .015 150 / .94) 100%); }
+:root { --photo-scrim: linear-gradient(180deg, oklch(.18 .015 150 / .62), oklch(.18 .015 150 / .7)); --close-scrim: oklch(.18 .015 150 / .86); --cta-shadow: 0 8px 24px oklch(.15 .04 155 / .2); --editorial-accent: oklch(.79 .14 25); --copy-emphasis: oklch(.5 .19 25); --goal-scrim: linear-gradient(180deg, transparent 10%, oklch(.17 .015 150 / .94) 100%); }
+.copy-emphasis { color: var(--copy-emphasis); }
+.hero-copy strong { color: var(--editorial-accent); }
+.compliance-section { background: var(--background); border-top: 1px solid var(--border); }
+.compliance-heading { max-width: 790px; margin: 0 auto 40px; text-align: center; }
+.compliance-heading p,.compliance-close p { font-size: 17px; line-height: 1.8; }
+.compliance-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.compliance-item { border-top: 2px solid var(--border); padding-top: 22px; }
+.compliance-short { color: var(--copy-emphasis); font-size: 14px; font-weight: 750; }
+.compliance-item h3 { font-size: 19px; font-weight: 750; line-height: 1.4; margin: 10px 0; }
+.compliance-item p { color: var(--muted-foreground); font-size: 15px; line-height: 1.8; }
+.compliance-close { text-align: center; margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.client-goal .goal-contact { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid color-mix(in oklch,var(--hero-foreground) 30%,transparent); margin-top: 22px; padding-top: 14px; font-size: 12px; font-weight: 650; }
+.client-goal:focus-visible { outline: 3px solid var(--whatsapp); outline-offset: 4px; }
+@media (max-width: 700px) { .compliance-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 18px; } .compliance-item h3 { font-size: 16px; } .compliance-item p { font-size: 13px; } .compliance-heading p,.compliance-close p { font-size: 15px; } }
+@media (max-width: 380px) { .compliance-grid { grid-template-columns: 1fr; } }
 .sales-page .site-header { height: 88px; border-bottom: 1px solid var(--border); }
 .sales-page .hero-inner { text-align: center; max-width: 940px; padding: 64px 0 76px; }
 .sales-page .hero h1 { max-width: 900px; margin: 24px auto; font-size: 58px; line-height: 1.15; }
@@ -57,11 +72,11 @@
 .client-goals { background: var(--secondary); }
 .client-goals-heading { max-width: 720px; text-align: center; margin: 0 auto 40px; }
 .client-goals-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
-.client-goal { position: relative; min-height: 360px; overflow: hidden; border-radius: 6px; background: var(--ink); color: var(--hero-foreground); }
+.client-goal { position: relative; display: block; height: auto; padding: 0; white-space: normal; text-align: left; min-height: 410px; overflow: hidden; border-radius: 6px; background: var(--ink); color: var(--hero-foreground); text-decoration: none; }
 .client-goal::after { content: ''; position: absolute; inset: 0; background: var(--goal-scrim); }
 .client-goal>img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .client-goal:hover>img { transform: scale(1.035); }
-.client-goal-copy { position: relative; z-index: 1; min-height: 360px; display: flex; flex-direction: column; justify-content: flex-end; padding: 26px 20px; }
+.client-goal-copy { position: relative; z-index: 1; min-height: 410px; display: flex; flex-direction: column; justify-content: flex-end; padding: 26px 20px; }
 .client-goal h3 { font-size: 21px; line-height: 1.4; font-weight: 750; margin: 0 0 12px; }
 .client-goal p { font-size: 14px; line-height: 1.7; margin: 0; }
 .goals-cta { display: flex; justify-content: center; margin-top: 36px; }
