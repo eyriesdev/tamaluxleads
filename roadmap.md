@@ -1,4 +1,5 @@
 # Tamalux lead acquisition
+- [x] Add matching document, survey, transfer and approval icons to all six compliance items.
 - [x] Fix the missing sitemap SEO finding and verify its robots.txt reference.
 - [x] Build the branded trust-led landing page and consultation form.
 - [x] Verify consultation submission and page layout.
