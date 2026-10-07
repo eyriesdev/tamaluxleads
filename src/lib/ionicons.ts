@@ -14,7 +14,7 @@ import development from "@/assets/ionicons/construct-outline.svg?raw";
 import payment from "@/assets/ionicons/receipt-outline.svg?raw";
 import terms from "@/assets/ionicons/scale-outline.svg?raw";
 import whatsapp from "@/assets/ionicons/logo-whatsapp.svg?raw";
-import forward from "@/assets/ionicons/arrow-up-forward-outline.svg?raw";
+import forward from "@/assets/ionicons/arrow-forward-outline.svg?raw";
 
 export const ionicons = {
   documentLock,
