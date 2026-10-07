@@ -49,14 +49,23 @@
 @media (max-width: 700px) { .compliance-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 18px; } .compliance-item h3 { font-size: 16px; } .compliance-item p { font-size: 13px; } .compliance-heading p,.compliance-close p { font-size: 15px; } }
 @media (max-width: 380px) { .compliance-grid { grid-template-columns: 1fr; } }
 .sales-page .site-header { height: 88px; border-bottom: 1px solid var(--border); }
-.sales-page .hero-inner { text-align: center; max-width: 940px; padding: 64px 0 76px; }
-.sales-page .hero h1 { max-width: 900px; margin: 24px auto; font-size: 58px; line-height: 1.15; }
-.sales-page .hero h1 em { color: var(--editorial-accent); }
-.sales-page .hero .eyebrow,.sales-page .hero-actions { justify-content: center; }
-.sales-page .hero-copy { margin-left: auto; margin-right: auto; max-width: 630px; font-size: 16px; line-height: 1.8; opacity: 1; }
-.sales-page .hero-lead { font-size: 20px; }
-.sales-page .hero-shade { background: var(--photo-scrim); }
-.sales-page .hero { min-height: 620px; }
+.sales-page .hero { display: flex; align-items: center; justify-content: center; padding: 24px 16px 40px; background: var(--background); min-height: 0; }
+.hero-frame { position: relative; width: 100%; max-width: 1320px; min-height: 640px; border-radius: 22px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 80px -30px oklch(.2 .02 250 / .45); }
+.hero-frame .hero-photo,.hero-frame .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-frame .hero-shade { background: linear-gradient(180deg, oklch(.15 .02 255 / .93) 0%, oklch(.15 .02 255 / .78) 42%, oklch(.15 .02 255 / .94) 100%); }
+.hero-inner { position: relative; z-index: 1; width: min(92%, 880px); text-align: center; padding: 84px 24px 72px; animation: hero-rise .9s ease-out both; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-pill { display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px; border: 1px solid color-mix(in oklch, var(--hero-foreground) 18%, transparent); background: color-mix(in oklch, var(--hero-foreground) 7%, transparent); backdrop-filter: blur(8px); border-radius: 999px; font-size: 10px; font-weight: 650; letter-spacing: .22em; text-transform: uppercase; color: color-mix(in oklch, var(--hero-foreground) 85%, transparent); }
+.hero-pulse { width: 7px; height: 7px; border-radius: 999px; background: var(--editorial-accent); animation: hero-pulse 2.4s ease-out infinite; }
+@keyframes hero-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--editorial-accent) 55%, transparent); } 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+.sales-page .hero h1 { font-family: 'Playfair Display', var(--font-display); font-weight: 700; max-width: 880px; margin: 30px auto 24px; font-size: clamp(42px, 5.6vw, 72px); line-height: 1.12; letter-spacing: -.01em; }
+.sales-page .hero h1 em { font-style: italic; color: var(--editorial-accent); }
+.sales-page .hero-copy { margin: 0 auto 36px; max-width: 600px; font-size: 17px; line-height: 1.85; opacity: .92; }
+.sales-page .hero-actions { justify-content: center; margin-top: 0; }
+.hero .whatsapp-contact-cta { padding: 18px 36px; border-radius: 12px; font-size: 16px; min-height: 62px; }
+.hero-rule { width: 56px; height: 1px; background: color-mix(in oklch, var(--hero-foreground) 22%, transparent); margin: 30px auto 0; }
+.hero-footnote { display: inline-block; margin-top: 14px; font-size: 10px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: color-mix(in oklch, var(--hero-foreground) 55%, transparent); }
+@media (max-width: 700px) { .sales-page .hero { padding: 14px 10px 28px; } .hero-frame { min-height: 560px; border-radius: 16px; } .hero-inner { padding: 56px 18px; } .hero-frame .hero-photo { object-position: center; } .hero-pill { font-size: 9px; letter-spacing: .16em; } .sales-page .hero-copy { font-size: 15px; margin-bottom: 30px; } .hero .whatsapp-contact-cta { padding: 16px 24px; font-size: 14px; } .hero-footnote { letter-spacing: .22em; } }
 .whatsapp-contact-cta { min-height: 58px; height: auto; max-width: 100%; padding: 16px 28px; border-radius: 6px; font-size: 15px; font-weight: 650; gap: 12px; box-shadow: var(--cta-shadow); transition: transform .2s, background .2s; white-space: normal; text-align: center; }
 .whatsapp-contact-cta svg { width: 24px; height: 24px; }
 .whatsapp-contact-cta:hover { transform: translateY(-2px); }
