@@ -86,59 +86,59 @@ function Index() {
       </div>
     </section>
 
-    <section className="section opening-copy"><div className="sales-copy">
+    <section className="section opening-copy"><div className="cinematic-card"><div className="sales-copy">
       <h2>The real question isn’t “How cheap is the land?” It’s <span className="copy-emphasis">“What am I actually buying?”</span></h2>
       <p>Every day, people see attractive property offers and exciting prices. But a beautiful location doesn’t automatically mean a good investment.</p>
       <p>Because the wrong property decision can leave you with more than a bad investment. It can leave you with <strong className="copy-emphasis">years of uncertainty, delays and financial stress.</strong></p>
       <p>That’s why informed buyers don’t simply chase cheap land. <strong className="copy-emphasis">They investigate before they commit.</strong></p>
-    </div></section>
+    </div></div></section>
 
-    <section id="services" className="section services-section"><div className="sales-copy">
+    <section id="services" className="section services-section"><div className="cinematic-card"><div className="sales-copy">
       <h2><span className="copy-emphasis">Before you send money,</span> ask what matters.</h2>
       <ol className="sales-list">{questions.map((item) => <li key={item.question}><span className="question-icon"><IonIcon name={item.icon} /></span><span className="question-copy"><strong className="question-text">{item.question}</strong><em className="question-stake">{item.stake}</em></span></li>)}</ol>
       <p>You don’t need to know everything about Abuja real estate. You do need to <strong className="copy-emphasis">know what you’re paying for.</strong></p>
       <Cta />
-    </div></section>
+    </div></div></section>
 
-    <section className="section tamalux-approach"><div className="sales-copy">
+    <section className="section tamalux-approach"><div className="cinematic-card"><div className="sales-copy">
       <h2>That’s where Tamalux comes in.</h2>
       <p>Tamalux Homes & Properties helps individuals, families and investors identify, evaluate and pursue suitable property opportunities across Abuja — whether you want to buy land, build a home, invest or sell.</p>
       <p>We walk you through title and documentation, location and market insight, estate development, land banking opportunities and the terms of each transaction, so you decide with <strong className="copy-emphasis">clarity, not guesswork.</strong></p>
       <p><strong className="copy-emphasis">Don’t just look at the promise. Ask to see the work.</strong> Discuss the actual estate location, available documentation and development status with a consultant before you make any commitment.</p>
-    </div></section>
+    </div></div></section>
 
-    <section className="section compliance-section" aria-labelledby="compliance-title"><div className="section-inner">
+    <section className="section compliance-section" aria-labelledby="compliance-title"><div className="cinematic-card"><div className="section-inner">
       <div className="compliance-heading"><h2 id="compliance-title">Your property should come with <span className="copy-emphasis">more than a promise.</span></h2><p>All our properties meet applicable <strong>land title, ownership documentation and FCTA approval requirements.</strong> Here’s what matters for your purchase.</p></div>
       <div className="compliance-grid">{compliances.map((item) => <article className="compliance-item" key={item.name}><div className="compliance-visual"><IonIcon name={item.icon} className="compliance-icon" /><span className="compliance-short">{item.short}</span></div><h3>{item.name}</h3><p>{item.copy}</p></article>)}</div>
       <div className="compliance-close"><p><strong className="copy-emphasis">Know the title. See the documents.</strong><br />Ask your consultant which documents and approvals apply to your chosen property and transaction.</p><Cta /></div>
-    </div></section>
+    </div></div></section>
 
-    <section className="section client-goals" aria-labelledby="client-goals-title"><div className="section-inner">
+    <section className="section client-goals" aria-labelledby="client-goals-title"><div className="cinematic-card"><div className="section-inner">
       <div className="client-goals-heading"><h2 id="client-goals-title">Which property goal are you working toward?</h2></div>
       <div className="client-goals-grid">{goals.map((goal) => <Button variant="whatsapp" asChild className="client-goal" key={goal.title}><a href={whatsappUrl(`Hello Tamalux Consultant, I saw your YouTube Ads, and I am interested in ${goal.interest}. My name is ......`)} target="_blank" rel="noopener noreferrer" aria-label={`${goal.title} — chat on WhatsApp`}>
         <img src={goal.image.url} alt="" width={1000} height={750} loading="lazy" />
         <div className="client-goal-copy"><h3>{goal.title}</h3><p>{goal.copy}</p><span className="goal-contact">Let’s talk on WhatsApp <IonIcon name="forward" className="goal-arrow" /></span></div>
       </a></Button>)}</div>
       <div className="goals-cta"><Cta /></div>
-    </div></section>
+    </div></div></section>
 
-    <section className="section next-steps-section" aria-labelledby="next-steps-title"><div className="section-inner">
+    <section className="section next-steps-section" aria-labelledby="next-steps-title"><div className="cinematic-card"><div className="section-inner">
       <div className="next-steps-heading"><h2 id="next-steps-title">A clear next step. <span className="copy-emphasis">Not a leap of faith.</span></h2><p>Your first conversation starts with what you want to achieve.</p></div>
       <ol className="next-steps-list">{nextSteps.map((step, index) => <li key={step.title}><span className="step-number" aria-hidden="true">0{index + 1}</span><h3>{step.title}</h3><p>{step.copy}</p></li>)}</ol>
-    </div></section>
+    </div></div></section>
 
-    <section className="section buyer-questions-section" aria-labelledby="buyer-questions-title"><div className="sales-copy">
+    <section className="section buyer-questions-section" aria-labelledby="buyer-questions-title"><div className="cinematic-card"><div className="sales-copy">
       <h2 id="buyer-questions-title">Before you take the next step, <span className="copy-emphasis">get clarity.</span></h2>
       <div className="buyer-questions">{buyerQuestions.map((item) => <details key={item.question}><summary>{item.question}<span className="faq-marker" aria-hidden="true" /></summary><p>{item.answer}</p></details>)}</div>
-    </div></section>
+    </div></div></section>
 
-    <section className="section evidence-band photo-close"><img className="closing-photo" src={investImage.url} alt="" width={1400} height={933} loading="lazy" /><div className="closing-shade" /><div className="sales-copy">
+    <section className="section"><div className="cinematic-card evidence-band photo-close"><img className="closing-photo" src={investImage.url} alt="" width={1400} height={933} loading="lazy" /><div className="closing-shade" /><div className="sales-copy">
       <h2>Let’s talk about your next property move.</h2>
       <p>You don’t need to know everything about Abuja real estate before speaking to us.</p>
       <p><strong>Tell us what you’re looking for.</strong> Your budget. Your preferred location. Your reason for buying. Your timeline.</p>
       <p>We’ll help you understand the available options and the questions you should be asking before making a decision.</p>
       <Cta />
-    </div></section>
+    </div></div></section>
 
     <div className="mobile-contact"><Cta /></div>
   </main>;
