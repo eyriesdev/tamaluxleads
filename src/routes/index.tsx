@@ -72,11 +72,17 @@ function Index() {
     <header className="site-header sales-header"><span className="brand"><span className="logo-box"><img src={logo.url} alt="Tamalux Homes & Properties logo" width={58} height={58} /></span><span className="brand-name">TAMALUX<span className="brand-sub">HOMES & PROPERTIES LTD</span></span></span></header>
 
     <section className="hero" aria-labelledby="hero-title">
-        <img className="hero-photo" src={heroImage.url} alt="" width={1920} height={1280} fetchPriority="high" /><div className="hero-shade" />
-      <div className="hero-inner">
-        <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
-        <p className="hero-copy">Before you commit your <strong>hard-earned money</strong>, understand the documentation, the location, the development potential and the opportunity itself.</p>
-        <div className="hero-actions"><Cta /></div>
+      <div className="hero-frame">
+        <img className="hero-photo" src={heroImage.url} alt="" width={1920} height={1280} fetchPriority="high" />
+        <div className="hero-shade" />
+        <div className="hero-inner">
+          <span className="hero-pill"><span className="hero-pulse" aria-hidden="true" />Tamalux Homes & Properties LTD</span>
+          <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
+          <p className="hero-copy">Before you commit your <strong>hard-earned money</strong>, understand the documentation, the location, the development potential and the opportunity itself.</p>
+          <div className="hero-actions"><Cta /></div>
+          <span className="hero-rule" aria-hidden="true" />
+          <p className="hero-footnote">Abuja, Nigeria</p>
+        </div>
       </div>
     </section>
 
