@@ -150,3 +150,9 @@
 .question-icon .ion { width: 26px; height: 26px; }
 .goal-contact .ion { width: 16px; height: 16px; opacity: .85; }
 @media (max-width: 700px) { .question-icon .ion { width: 21px; height: 21px; } }
+
+/* Cinematic section cards */
+.sales-page { background: color-mix(in oklch, var(--secondary) 55%, var(--background)); }
+.cinematic-card { position: relative; max-width: 1320px; margin: 0 auto; background: var(--background); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 30px 80px -30px oklch(.2 .02 250 / .35); padding: 72px 64px; overflow: hidden; }
+.sales-page .section { padding: 26px 16px; background: transparent; border: none; }
+@media (max-width: 700px) { .cinematic-card { padding: 40px 22px; border-radius: 16px; } .sales-page .section { padding: 14px 10px; } }
