@@ -75,11 +75,8 @@ function Index() {
         <img className="hero-photo" src={heroImage.url} alt="" width={1920} height={1280} fetchPriority="high" /><div className="hero-shade" />
       <div className="hero-inner">
         <h1 id="hero-title">Before you buy property in Abuja, <em>know what you’re buying.</em></h1>
-        <p className="hero-lead">Buy land. Build a home. Invest. Sell property.</p>
-        <p className="hero-company">With Tamalux Homes &amp; Properties LTD, Abuja.</p>
         <p className="hero-copy">Before you commit your <strong>hard-earned money</strong>, understand the documentation, the location, the development potential and the opportunity itself.</p>
         <div className="hero-actions"><Cta /></div>
-        <p className="hero-contact-context">Discuss your goal, suitable options and the documents to review before you commit.</p>
       </div>
     </section>
 
