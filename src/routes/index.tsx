@@ -61,7 +61,7 @@ const nextSteps = [
 const buyerQuestions = [
   { question: 'What properties are available, and what do they cost?', answer: 'Availability and pricing depend on the location and property. Share your goal and budget on WhatsApp, then ask for current options, plot sizes, the full price and any additional charges for the property you are considering.' },
   { question: 'Can I inspect a property before committing?', answer: 'Ask your consultant about inspection arrangements for your chosen property. Confirm the exact site location and current development status before making any payment.' },
-  { question: 'Does every property need all six documents?', answer: 'The documents and approvals required depend on the property’s title, intended use and type of transaction. Ask which apply to your chosen property, request the relevant records and seek independent legal advice before signing.' },
+  { question: 'Does every property need all five documents?', answer: 'The documents and approvals required depend on the property’s title, intended use and type of transaction. Ask which apply to your chosen property, request the relevant records and seek independent legal advice before signing.' },
   { question: 'Are payment plans available?', answer: 'Ask whether a payment plan is available for the specific property. If one is offered, request the deposit, instalment schedule, total payable, additional charges and cancellation terms in writing before agreeing.' },
   { question: 'What should I send in my first message?', answer: 'Your name, property goal, preferred location, approximate budget and timeline are enough to begin the discussion. Keep sensitive identity and financial documents out of your opening message.' },
 ];
