@@ -36,8 +36,7 @@ const goals = [
 ];
 
 const compliances: { name: string; short: string; icon: IonIconName; copy: string }[] = [
-  { name: 'Right of Occupancy', short: 'R of O', icon: "documentLock", copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
-  { name: 'Certificate of Occupancy', short: 'C of O', icon: "ribbon", copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
+  { name: 'FCDA Certificate of Occupancy', short: 'FCDA C of O', icon: "ribbon", copy: 'The primary leasehold title issued by the Federal Capital Development Authority, typically for 99 years, processed through FCDA / AGIS.' },
   { name: 'Registered Survey Plan', short: 'Survey', icon: "map", copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
   { name: 'Deed of Assignment / Sublease', short: 'Transfer', icon: "transfer", copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
   { name: 'Ministerial Consent', short: 'Consent', icon: "approval", copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
