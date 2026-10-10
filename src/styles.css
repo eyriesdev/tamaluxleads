@@ -46,7 +46,7 @@
 .compliance-close { text-align: center; margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .client-goal .goal-contact { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid color-mix(in oklch,var(--hero-foreground) 30%,transparent); margin-top: 22px; padding-top: 14px; font-size: 12px; font-weight: 650; }
 .client-goal:focus-visible { outline: 3px solid var(--whatsapp); outline-offset: 4px; }
-@media (max-width: 700px) { .compliance-grid { gap: 24px 18px; } .compliance-item { flex-basis: calc((100% - 18px) / 2); max-width: calc((100% - 18px) / 2); } .compliance-item h3 { font-size: 16px; } .compliance-item p { font-size: 13px; } .compliance-heading p,.compliance-close p { font-size: 15px; } }
+@media (max-width: 700px) { .compliance-grid { gap: 24px 18px; } .compliance-item { flex-basis: calc((100% - 18px) / 2); max-width: calc((100% - 18px) / 2); } .compliance-visual { flex-direction: column; align-items: flex-start; gap: 12px; min-height: 0; } .compliance-item h3 { font-size: 16px; } .compliance-item p { font-size: 13px; } .compliance-heading p,.compliance-close p { font-size: 15px; } }
 @media (max-width: 380px) { .compliance-item { flex-basis: 100%; max-width: 100%; } }
 .sales-page .site-header { height: 88px; border-bottom: 1px solid var(--border); }
 .sales-page .hero { display: flex; align-items: center; justify-content: center; padding: 24px 16px 40px; background: var(--background); min-height: 0; }
