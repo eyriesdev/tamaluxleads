@@ -36,8 +36,7 @@ const goals = [
 ];
 
 const compliances: { name: string; short: string; icon: IonIconName; copy: string }[] = [
-  { name: 'Right of Occupancy', short: 'R of O', icon: "documentLock", copy: 'The allocation document establishing occupancy rights before a full title is processed.' },
-  { name: 'Certificate of Occupancy', short: 'C of O', icon: "ribbon", copy: 'The primary leasehold title, typically for 99 years, issued through the FCDA / AGIS process.' },
+  { name: 'FCDA Certificate of Occupancy', short: 'FCDA C of O', icon: "ribbon", copy: 'The primary leasehold title issued by the Federal Capital Development Authority, typically for 99 years, processed through FCDA / AGIS.' },
   { name: 'Registered Survey Plan', short: 'Survey', icon: "map", copy: 'Official coordinates and the Surveyor-General’s red stamp identify the land you are buying.' },
   { name: 'Deed of Assignment / Sublease', short: 'Transfer', icon: "transfer", copy: 'The legal document recording the transfer of ownership or leasehold interest to you.' },
   { name: 'Ministerial Consent', short: 'Consent', icon: "approval", copy: 'FCT Minister approval where required for a resale, property transfer or land-use change.' },
@@ -62,7 +61,7 @@ const nextSteps = [
 const buyerQuestions = [
   { question: 'What properties are available, and what do they cost?', answer: 'Availability and pricing depend on the location and property. Share your goal and budget on WhatsApp, then ask for current options, plot sizes, the full price and any additional charges for the property you are considering.' },
   { question: 'Can I inspect a property before committing?', answer: 'Ask your consultant about inspection arrangements for your chosen property. Confirm the exact site location and current development status before making any payment.' },
-  { question: 'Does every property need all six documents?', answer: 'The documents and approvals required depend on the property’s title, intended use and type of transaction. Ask which apply to your chosen property, request the relevant records and seek independent legal advice before signing.' },
+  { question: 'Does every property need all five documents?', answer: 'The documents and approvals required depend on the property’s title, intended use and type of transaction. Ask which apply to your chosen property, request the relevant records and seek independent legal advice before signing.' },
   { question: 'Are payment plans available?', answer: 'Ask whether a payment plan is available for the specific property. If one is offered, request the deposit, instalment schedule, total payable, additional charges and cancellation terms in writing before agreeing.' },
   { question: 'What should I send in my first message?', answer: 'Your name, property goal, preferred location, approximate budget and timeline are enough to begin the discussion. Keep sensitive identity and financial documents out of your opening message.' },
 ];
