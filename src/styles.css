@@ -38,7 +38,7 @@
 .compliance-heading p,.compliance-close p { font-size: 17px; line-height: 1.8; }
 .compliance-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
 .compliance-item { flex: 1 1 calc((100% - 64px) / 3); max-width: calc((100% - 64px) / 3); border-top: 2px solid var(--border); padding-top: 22px; }
-.compliance-short { color: var(--copy-emphasis); font-size: 14px; font-weight: 750; }
+.compliance-short { color: var(--copy-emphasis); font-size: 14px; font-weight: 750; white-space: nowrap; }
 .compliance-visual { display: flex; align-items: center; gap: 18px; min-height: 68px; margin-bottom: 18px; }
 .compliance-icon { width: 64px; height: 64px; flex-shrink: 0; padding: 12px; border-radius: 6px; color: var(--copy-emphasis); background: color-mix(in oklch, var(--copy-emphasis) 7%, var(--background)); }
 .compliance-item h3 { font-size: 19px; font-weight: 750; line-height: 1.4; margin: 10px 0; }
